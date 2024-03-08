@@ -45078,6 +45078,7 @@ try {
   const htmlFiles = files.filter((file) => file.endsWith(".html"));
 
   // add flags to minify config
+  minifyConfig = {};
   const flagsList = flags.split(",").map((flag) => flag.trim());
   flagsList.forEach((flag) => {
     value = !flag.startsWith("!");
