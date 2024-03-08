@@ -1,5 +1,5 @@
 const core = require("@actions/core");
-// // const github = require("@actions/github");
+// const github = require("@actions/github");
 var minify = require("html-minifier").minify;
 
 // Replace the content of the file with the minified HTML
@@ -27,7 +27,7 @@ try {
   // get all html files in the rootDir folder
   const fs = require("fs");
   const path = require("path");
-  const basePath = path.resolve(__dirname, "..");
+  const basePath = path.resolve(process.env.GITHUB_WORKSPACE);
   const rootPath = path.join(basePath, rootDir);
   const files = fs.readdirSync(rootPath, { recursive: true });
   const htmlFiles = files.filter((file) => file.endsWith(".html"));
