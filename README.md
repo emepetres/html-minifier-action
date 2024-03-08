@@ -1,6 +1,17 @@
-# html-minifier-action
+# HTMLMinifier Action
+[![GitHub release](https://img.shields.io/github/release/emepetres/html-minifier-action.svg?color=orange)](https://gitHub.com/emepetres/html-minifier-action/releases/)
+[![MIT license](https://img.shields.io/github/license/emepetres/html-minifier-action.svg?color=blue)](https://github.com/emepetres/html-minifier-action/blob/main/LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 
 Action to use [HTMLMinifier](https://github.com/kangax/html-minifier) on Github Actions
+
+## Usage
+
+Add the following step to your workflow file, just before deploying your HTML files.
+
+```yaml
+- uses: emepetres/html-minifier-action@v1
+```
 
 ## Inputs
 
@@ -34,7 +45,7 @@ The files minified, relative to repository root.
 
 ```yaml
 - name: HTMLMinifier
-  uses: emepetres/html-minifier-action
+  uses: emepetres/html-minifier-action@v1
   id: html-minifier
   with:
     rootDir: "src"

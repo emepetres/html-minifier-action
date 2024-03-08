@@ -1,9 +1,11 @@
 # How to contribute
 
-Github actions cannot be tested locally and therefore can only be tested by pushing to a repository.
-To test this action, setup your environment as follows, then make changes, build and push to a new branch.
+The action can be tested through its private workflow.
+To contribute, setup your environment as follows, improve it, build and push to a new branch.
 Output can be seen in the private workflow of the repository.
 Once you are happy with your changes, create a pull request.
+
+**Working on your first Pull Request?** You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://kcd.im/pull-request)
 
 ## Local setup
 
