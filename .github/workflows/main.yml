@@ -15,6 +15,7 @@ jobs:
         with:
           rootDir: "samples"
           verbose: true
+          flags: "removeAttributeQuotes"
       # Use the output from the `hello` step
       - name: Get the minfied files from output
         run: echo "The files minfied are ${{ steps.html-minifier.outputs.minifiedFiles }}"

@@ -12,6 +12,14 @@ Action to use [HTMLMinifier](https://github.com/kangax/html-minifier) on Github 
 
 **Optional** Prints minification details. Default `false`.
 
+### `minifyCSS`
+
+**Optional** Minify CSS in style elements and style attributes. Default `true`.
+
+### `minifyJS`
+
+**Optional** Minify JavaScript in script elements and event attributes. Default `true`.
+
 ## Outputs
 
 ### `minifiedFiles`

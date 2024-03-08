@@ -45065,6 +45065,9 @@ try {
   const rootDir = core.getInput("rootDir");
   const verbose =
     core.getInput("verbose").toLowerCase() == "true" ? true : false;
+  const minifyCSS = core.getInput("minifyCSS").toLowerCase() == "true";
+  const minifyJS = core.getInput("minifyJS").toLowerCase() == "true";
+  const flags = core.getInput("flags");
 
   // get all html files in the rootDir folder
   const fs = __nccwpck_require__(7147);
@@ -45074,10 +45077,15 @@ try {
   const files = fs.readdirSync(rootPath, { recursive: true });
   const htmlFiles = files.filter((file) => file.endsWith(".html"));
 
-  // minify config
-  const minifyConfig = {
-    removeAttributeQuotes: true,
-  };
+  // add flags to minify config
+  const flagsList = flags.split(",").map((flag) => flag.trim());
+  flagsList.forEach((flag) => {
+    value = !flag.startsWith("!");
+    flag = flag.replace("!", "");
+    minifyConfig[flag] = value;
+  });
+  minifyConfig.minifyCSS = minifyCSS;
+  minifyConfig.minifyJS = minifyJS;
 
   // minify each html file
   htmlFiles.forEach((file) => {
