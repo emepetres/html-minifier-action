@@ -24,7 +24,7 @@ try {
   // get all html files in the rootDir folder
   const fs = require("fs");
   const path = require("path");
-  const rootPath = path.join(__dirname, "..", rootDir);
+  const rootPath = path.join(process.cwd(), "..", rootDir);
   const files = fs.readdirSync(rootPath, { recursive: true });
   const htmlFiles = files.filter((file) => file.endsWith(".html"));
 
