@@ -15,7 +15,7 @@ jobs:
         with:
           rootDir: "samples"
           verbose: true
-          flags: "removeAttributeQuotes"
+          flags: "collapseWhitespace, removeComments, removeOptionalTags, removeRedundantAttributes, removeScriptTypeAttributes, removeTagWhitespace, useShortDoctype, removeAttributeQuotes"
       # Use the output from the `hello` step
       - name: Get the minfied files from output
         run: echo "The files minfied are ${{ steps.html-minifier.outputs.minifiedFiles }}"

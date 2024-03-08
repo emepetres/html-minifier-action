@@ -35,6 +35,7 @@ The files minified, relative to repository root.
   with:
     rootDir: "src"
     verbose: true
+    flags: "collapseWhitespace, removeComments, removeOptionalTags, removeRedundantAttributes, removeScriptTypeAttributes, removeTagWhitespace, useShortDoctype, removeAttributeQuotes"
 - name: Get the minfied files from output
   run: echo "The files minfied are ${{ steps.html-minifier.outputs.minifiedFiles }}"
 ```
