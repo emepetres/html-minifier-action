@@ -1,13 +1,29 @@
 name: "HTMLMinifier"
 description: "Minify HTML files"
 inputs:
-  who-to-greet: # id of input
-    description: "Who to greet"
-    required: true
-    default: "World"
+  rootDir:
+    description: "Path to root directory containing HTML files"
+    required: false
+    default: "."
+  verbose:
+    description: "Prints minification details"
+    required: false
+    default: "false"
+  minifyCSS:
+    description: "Minify CSS"
+    required: false
+    default: "true"
+  minifyJS:
+    description: "Minify JS"
+    required: false
+    default: "true"
+  flags:
+    description: "Additional flags to pass to HTMLMinifier, separted by comma. See https://github.com/kangax/html-minifier#options-quick-reference. Use ! to indicate false value of a flag."
+    required: false
+    default: ""
 outputs:
-  time: # id of output
-    description: "The time we greeted you"
+  minifiedFiles:
+    description: "The files minified, relative to repository root."
 runs:
   using: "node20"
   main: "dist/index.js"

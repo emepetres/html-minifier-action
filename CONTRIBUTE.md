@@ -14,16 +14,12 @@ npm i -g @vercel/ncc
 npm install
 ```
 
-## Build
+## Build & test on github
 
 ```bash
 ncc build index.js --license licenses.txt
-```
-
-## Push
-
-```bash
-git commit -m "changes description"
-git tag -a -m "Version description" v1.1
+git add .
+git commit -m "[changes description]"
+git tag -a -m "[Version description]" [v1.1]
 git push --follow-tags
 ```
