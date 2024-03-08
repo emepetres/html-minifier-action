@@ -45069,7 +45069,8 @@ try {
   // get all html files in the rootDir folder
   const fs = __nccwpck_require__(7147);
   const path = __nccwpck_require__(1017);
-  const rootPath = path.join(path.resolve(__dirname, ".."), rootDir);
+  const basePath = path.resolve(__dirname, "..");
+  const rootPath = path.join(basePath, rootDir);
   const files = fs.readdirSync(rootPath, { recursive: true });
   const htmlFiles = files.filter((file) => file.endsWith(".html"));
 
@@ -45084,7 +45085,12 @@ try {
     minifyFile(filePath, minifyConfig, verbose);
   });
 
-  core.setOutput("minifiedFiles", htmlFiles);
+  // set htmlFiles relative to basePath
+  const htmlFilesRelative = htmlFiles.map((file) =>
+    path.relative(basePath, path.join(rootPath, file))
+  );
+
+  core.setOutput("minifiedFiles", htmlFilesRelative);
   // // // Get the JSON webhook payload for the event that triggered the workflow
   // // const payload = JSON.stringify(github.context.payload, undefined, 2);
   // // console.log(`The event payload: ${payload}`);

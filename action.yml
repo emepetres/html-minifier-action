@@ -11,7 +11,7 @@ inputs:
     default: "false"
 outputs:
   minifiedFiles:
-    description: "List of minified files, from rootDir path"
+    description: "The files minified, relative to repository root."
 runs:
   using: "node20"
   main: "dist/index.js"
