@@ -20,6 +20,10 @@ Action to use [HTMLMinifier](https://github.com/kangax/html-minifier) on Github 
 
 **Optional** Minify JavaScript in script elements and event attributes. Default `true`.
 
+### `flags`
+
+**Optional** Additional flags to pass to HTMLMinifier, separted by comma. See [docs](https://github.com/kangax/html-minifier#options-quick-reference). Use ! to indicate false value of a flag..
+
 ## Outputs
 
 ### `minifiedFiles`

@@ -20,6 +20,6 @@ npm install
 ncc build index.js --license licenses.txt
 git add .
 git commit -m "[changes description]"
-git tag -a -m "[Version description]" [v1.1]
+git tag -a -m "[Version description]" [v1]
 git push --follow-tags
 ```
