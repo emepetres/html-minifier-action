@@ -24,8 +24,8 @@ try {
   // get all html files in the rootDir folder
   const fs = require("fs");
   const path = require("path");
-  const distPath = path.join(__dirname, rootDir);
-  const files = fs.readdirSync(distPath, { recursive: true });
+  const rootPath = path.join(__dirname, "..", rootDir);
+  const files = fs.readdirSync(rootPath, { recursive: true });
   const htmlFiles = files.filter((file) => file.endsWith(".html"));
 
   // minify config
@@ -35,7 +35,7 @@ try {
 
   // minify each html file
   htmlFiles.forEach((file) => {
-    const filePath = path.join(distPath, file);
+    const filePath = path.join(rootPath, file);
     minifyFile(filePath, minifyConfig, verbose);
   });
 
