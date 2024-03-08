@@ -9,11 +9,12 @@ jobs:
       # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Hello world action step
+      - name: HTMLMinifier
         uses: ./ # Uses an action in the root directory
-        id: hello
+        id: html-minifier
         with:
-          who-to-greet: "Mona the Octocat"
+          rootDir: "samples"
+          verbose: true
       # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+      - name: Get the minfied files from output
+        run: echo "The files minfied are ${{ steps.html-minifier.outputs.minifiedFiles }}"

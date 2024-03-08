@@ -1,13 +1,17 @@
 name: "HTMLMinifier"
 description: "Minify HTML files"
 inputs:
-  who-to-greet: # id of input
-    description: "Who to greet"
-    required: true
-    default: "World"
+  rootDir:
+    description: "Path to root directory containing HTML files"
+    required: false
+    default: "."
+  verbose:
+    description: "Prints minification details"
+    required: false
+    default: "false"
 outputs:
-  time: # id of output
-    description: "The time we greeted you"
+  minifiedFiles:
+    description: "List of minified files, from rootDir path"
 runs:
   using: "node20"
   main: "dist/index.js"
