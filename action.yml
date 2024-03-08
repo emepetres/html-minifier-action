@@ -1,5 +1,8 @@
 name: "HTMLMinifier"
 description: "Minify HTML files"
+branding:
+  color: "blue"
+  icon: minimize-2
 inputs:
   rootDir:
     description: "Path to root directory containing HTML files"
