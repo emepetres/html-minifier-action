@@ -31,6 +31,12 @@ try {
   const rootPath = path.join(basePath, rootDir);
   const files = fs.readdirSync(rootPath, { recursive: true });
   const htmlFiles = files.filter((file) => file.endsWith(".html"));
+  if (minifyCSS) {
+    htmlFiles.push(...files.filter((file) => file.endsWith(".css")));
+  }
+  if (minifyJS) {
+    htmlFiles.push(...files.filter((file) => file.endsWith(".js")));
+  }
 
   // add flags to minify config
   minifyConfig = {};
